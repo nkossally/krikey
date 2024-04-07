@@ -6,8 +6,8 @@ function App() {
   const onClick = async() =>{
     try{
       const resp = await fetch("http://localhost:9000/testAPI")
-      const text = await resp.text()
-      console.log("text", text)
+      const json = await resp.json()
+      console.log("json", json)
     } catch(e){
 
     }
