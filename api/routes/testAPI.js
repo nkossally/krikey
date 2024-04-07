@@ -1,15 +1,10 @@
 var express = require("express");
-var get_user = require("../datasource");
-var { getBook, getSaleItem, getAuthor }  = require("../sqlite")
+var { getBook, getSaleItem, getAuthor, getTenOldelstAuthors, getTopSellingAuthors, getAuthorSalesTotal }  = require("../sqlite")
 var router = express.Router();
 
 router.get("/", async (req, res) => {
     try{
-        const result = await getSaleItem(2)
-        // const result= await getBook(2)
-        // const result = await getAuthor(2)
-
-        console.log("result", result)
+        const result = await getTopSellingAuthors();
 
         res.json(result)
     } catch {

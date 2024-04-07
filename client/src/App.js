@@ -1,8 +1,15 @@
+import { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-
 function App() {
+  useEffect(()=> {
+    const buildDatabase = async () =>{
+      await fetch("http://localhost:9000")
+    }
+    buildDatabase();
+  },[])
+
   const onClick = async() =>{
     try{
       const resp = await fetch("http://localhost:9000/testAPI")
@@ -11,7 +18,6 @@ function App() {
     } catch(e){
 
     }
-
   }
 
   return (
