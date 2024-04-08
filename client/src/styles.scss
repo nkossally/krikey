@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+}
+
+.authors-container {
+    margin-top: 100px;
+    box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 8px 12px -2px rgba(0, 0, 0, 0.08);
+    width: 588px;
+    border-radius: 2px;
+}
+
+.author-box {
+    width: 564px;
+    height: 84px;
+    margin-left: 12px;
+    gap: var(--space-0);
+    border: 0px 0px 1px 0px;
+    border-bottom: 1px solid #F4F5F6;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.name {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    letter-spacing: 0.25px;
+    text-align: left;
+}
+
+.email {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0.25px;
+    text-align: left;
+    color: #4E616B;
+}
+
+.profile-pic {
+    width: 48px;
+    height: 48px;
+    gap: 0px;
+    border-radius: 128px;
+    opacity: 0px;
+    margin-left: 10px;
+}
+
+.name-and-email {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.arrow {
+    margin-left: 15px;
+    height: 15px;
+}
+
+.x-circle-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.x-circle {
+    margin-right: 20px;
+}
+
+.search-container {
+    display: flex;
+    margin-top: 100px;
+}
+
+.search-button {
+    margin-left: 20px;
+}
+
+.error-message {
+    margin-top: 15px;
+    font-size: 24px;
+}
+
+.arrow-button{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
