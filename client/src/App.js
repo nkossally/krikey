@@ -34,6 +34,7 @@ function App() {
         setShowErrorMessage(false);
         setShowAuthors(true);
         setShowSearch(false);
+        setSearchText("");
         if (topSellingAuthors.length === 0) {
           const resp = await fetch("http://localhost:9000/topAuthors");
           const json = await resp.json();
