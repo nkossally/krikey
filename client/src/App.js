@@ -11,13 +11,15 @@ function App() {
   const [showErrorMessage, setShowErrorMessage] = useState(false);
   const [showSearch, setShowSearch] = useState(true);
 
+  const BASE_URL = process.env.REACT_APP_BASE_URL
+
   const handleInput = (e) => {
     setSearchText(e.target.value);
   };
 
   useEffect(() => {
     const buildDatabase = async () => {
-      await fetch("http://localhost:9000");
+      await fetch(BASE_URL);
     };
     buildDatabase();
   }, []);
@@ -25,7 +27,7 @@ function App() {
   const searchForTopSellingAuthors = async () => {
     try {
       const resp = await fetch(
-        `http://localhost:9000/author?name=${searchText}`
+        `${BASE_URL}author?name=${searchText}`
       );
       if (resp.status === 404) {
         setShowErrorMessage(true);
@@ -36,7 +38,7 @@ function App() {
         setShowSearch(false);
         setSearchText("");
         if (topSellingAuthors.length === 0) {
-          const resp = await fetch("http://localhost:9000/topAuthors");
+          const resp = await fetch(`${BASE_URL}topAuthors`);
           const json = await resp.json();
           setTopSellingAuthors(json);
         }
