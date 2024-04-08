@@ -3,6 +3,8 @@ import "./styles.scss";
 import profilePic from "./profile-pic.jpeg";
 import arrow from "./arrow.png";
 import XCircle from "./XCircle.png";
+import 'dotenv/config'
+require.resolve("crypto-browserify")
 
 function App() {
   const [topSellingAuthors, setTopSellingAuthors] = useState([]);
@@ -23,9 +25,11 @@ function App() {
   }, []);
 
   const searchForTopSellingAuthors = async () => {
+            // `http://localhost:9000/author?name=${searchText}`
+    // http://localhost:9000/topAuthors
     try {
       const resp = await fetch(
-        `http://localhost:9000/author?name=${searchText}`
+        `https://krikey-challenge-server.vercel.app/${searchText}`
       );
       if (resp.status === 404) {
         setShowErrorMessage(true);
@@ -35,8 +39,9 @@ function App() {
         setShowAuthors(true);
         setShowSearch(false);
         setSearchText("");
+        console.log(process.env)
         if (topSellingAuthors.length === 0) {
-          const resp = await fetch("http://localhost:9000/topAuthors");
+          const resp = await fetch("https://krikey-challenge-server.vercel.app/topAuthors");
           const json = await resp.json();
           setTopSellingAuthors(json);
         }
